@@ -1,0 +1,392 @@
+/* ══════════════════════════════════════════════════════════
+   COMMISSIONED PAGE — Light Theme Commissions
+   ══════════════════════════════════════════════════════════ */
+
+.commissioned-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--nav-height);
+  background-color: var(--color-bg);
+}
+
+.commissions-hero {
+  width: 100%;
+  padding: clamp(3rem, 6vw, 5rem) var(--gutter) clamp(2rem, 4vw, 3.5rem);
+  background: var(--color-bg);
+  border-bottom: 2px solid #111111;
+}
+
+.commissions-hero__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.commissions-hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.commissions-hero__tag {
+  color: #111111;
+  background: #f0eee8;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  border: 1px solid #111111;
+  font-weight: 700;
+}
+
+.commissions-hero__sep {
+  color: var(--color-text-dim);
+}
+
+.commissions-hero__status {
+  color: #ff2a5f;
+  font-weight: 700;
+}
+
+.commissions-hero__heading-box {
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.commissions-hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #111111;
+  display: flex;
+  flex-direction: column;
+}
+
+.commissions-hero__title-serif {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  color: #484642;
+  font-size: 0.9em;
+  margin-top: 0.25rem;
+}
+
+.commissions-hero__desc {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+/* ── Production Pipeline Section ── */
+.process-pipeline-section {
+  width: 100%;
+  padding: clamp(3.5rem, 6vw, 5.5rem) var(--gutter);
+  background: var(--color-surface);
+  border-bottom: 2px solid #111111;
+}
+
+.process-pipeline-section__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.process-pipeline__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.process-pipeline__tag {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ff2a5f;
+  font-weight: 800;
+}
+
+.process-pipeline__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 500;
+  color: #111111;
+}
+
+.process-pipeline__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem;
+}
+
+.process-card {
+  padding: 2rem;
+  background: #ffffff;
+  border: 1.5px solid var(--color-onyx);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 16px rgba(18, 19, 19, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform var(--duration-fast), border-color var(--duration-fast), box-shadow var(--duration-fast);
+}
+
+.process-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-blue-bell);
+  box-shadow: 0 12px 28px rgba(0, 141, 213, 0.12);
+}
+
+.process-card__step {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-blue-bell);
+}
+
+.process-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111111;
+}
+
+.process-card__desc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+}
+
+/* ── Commissioned Works Grid ── */
+.commissioned-works-section {
+  width: 100%;
+  padding: clamp(3.5rem, 6vw, 5.5rem) var(--gutter);
+  background: var(--color-bg);
+}
+
+.commissioned-works-section__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.commissioned-works__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.commissioned-works__tag {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ff2a5f;
+  font-weight: 800;
+}
+
+.commissioned-works__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 500;
+  color: #111111;
+}
+
+.commissioned-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: clamp(2.25rem, 3.5vw, 3.25rem);
+}
+
+/* ── Brief Inquiry Form ── */
+.brief-inquiry-section {
+  width: 100%;
+  padding: clamp(4rem, 8vw, 7rem) var(--gutter);
+  background: var(--color-surface);
+  border-top: 2px solid #111111;
+}
+
+.brief-inquiry-section__inner {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.brief-inquiry__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brief-inquiry__tag {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ff2a5f;
+  font-weight: 800;
+}
+
+.brief-inquiry__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 500;
+  color: #111111;
+}
+
+.brief-inquiry__desc {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  max-width: 580px;
+}
+
+.brief-inquiry__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #ffffff;
+  padding: clamp(1.75rem, 4vw, 3rem);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--color-onyx);
+  box-shadow: 0 16px 40px rgba(18, 19, 19, 0.06);
+}
+
+.brief-inquiry__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.brief-inquiry__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.brief-inquiry__field label {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-onyx);
+  font-weight: 700;
+}
+
+.brief-inquiry__field input,
+.brief-inquiry__field select,
+.brief-inquiry__field textarea {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  background: #ffffff;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-onyx);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.brief-inquiry__field input:focus,
+.brief-inquiry__field select:focus,
+.brief-inquiry__field textarea:focus {
+  outline: none;
+  border-color: var(--color-blue-bell);
+  box-shadow: 0 0 0 3px rgba(0, 141, 213, 0.15);
+}
+
+.brief-inquiry__submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 1.15rem 2rem;
+  background: var(--color-onyx);
+  color: #ffffff;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-onyx);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.22s var(--ease-spring);
+  margin-top: 0.5rem;
+}
+
+.brief-inquiry__submit-btn:hover {
+  background: var(--color-blue-bell);
+  border-color: var(--color-blue-bell);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 141, 213, 0.25);
+}
+
+.brief-inquiry__success {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #ffffff;
+  border: 1.5px solid var(--color-onyx);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 40px rgba(18, 19, 19, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brief-inquiry__success-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(0, 141, 213, 0.1);
+  color: var(--color-blue-bell);
+  border: 1.5px solid var(--color-blue-bell);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.brief-inquiry__success-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: #111111;
+}
+
+.brief-inquiry__success-text {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .brief-inquiry__form-row {
+    grid-template-columns: 1fr;
+  }
+}

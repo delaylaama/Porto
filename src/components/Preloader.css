@@ -1,0 +1,148 @@
+/* ══════════════════════════════════════════════════════════════
+   PRELOADER — Minimalist Editorial Intro with Logo Animation
+   ══════════════════════════════════════════════════════════════ */
+
+.preloader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background-color: #f8f8f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+  transition: transform 0.75s cubic-bezier(0.85, 0, 0.15, 1),
+              opacity 0.6s ease;
+}
+
+.preloader-overlay--exiting {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 480px;
+  width: 90%;
+  text-align: center;
+  animation: preloaderContentPop 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes preloaderContentPop {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ── Animated Aperture / Logo Monogram ── */
+.preloader-aperture {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-aperture__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px dashed #121313;
+  animation: apertureSpin 6s linear infinite;
+}
+
+@keyframes apertureSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.preloader-aperture__dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #008dd5;
+  box-shadow: 0 0 16px rgba(0, 141, 213, 0.75);
+  animation: dotPulse 1.4s infinite ease-in-out;
+}
+
+@keyframes dotPulse {
+  0%, 100% { transform: scale(0.85); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
+/* ── Animated Brand Typography ── */
+.preloader-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.preloader-brand__name {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: #121313;
+  line-height: 1;
+}
+
+.preloader-brand__tag {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #008dd5;
+  font-weight: 700;
+}
+
+/* ── Progress Track & Telemetry ── */
+.preloader-progress-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.preloader-progress-track {
+  width: 100%;
+  height: 3px;
+  background: rgba(18, 19, 19, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.preloader-progress-fill {
+  height: 100%;
+  background: #008dd5;
+  transition: width 0.08s ease;
+  box-shadow: 0 0 8px rgba(0, 141, 213, 0.6);
+}
+
+.preloader-telemetry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #787a7a;
+  font-weight: 600;
+}
+
+.preloader-telemetry__count {
+  font-weight: 800;
+  color: #121313;
+  font-variant-numeric: tabular-nums;
+}

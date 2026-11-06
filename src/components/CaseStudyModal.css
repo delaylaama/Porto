@@ -1,0 +1,503 @@
+/* ══════════════════════════════════════════════════════
+   CASE STUDY MODAL — Light Theme Cinematic Lightbox
+   ══════════════════════════════════════════════════════ */
+
+.case-study-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(18, 18, 18, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 3vw, 3rem);
+  animation: overlayFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  overflow-y: auto;
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.case-study-modal {
+  width: 100%;
+  max-width: 1240px;
+  max-height: 92vh;
+  background: #ffffff;
+  border: 1.5px solid var(--color-onyx);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 60px -10px rgba(18, 19, 19, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modalScaleUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalScaleUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Modal Header ── */
+.case-study-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2rem;
+  border-bottom: 2px solid #111111;
+  background: #fbfbfa;
+  z-index: 10;
+}
+
+.case-study-modal__breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.case-study-modal__tag {
+  color: #111111;
+  background: #f0eee8;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  border: 1px solid #111111;
+  font-weight: 700;
+}
+
+.case-study-modal__sep {
+  color: var(--color-text-dim);
+}
+
+.case-study-modal__client {
+  color: #111111;
+  font-weight: 700;
+}
+
+.case-study-modal__year {
+  color: var(--color-text-muted);
+}
+
+.case-study-modal__close {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #111111;
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-full);
+  border: 1.5px solid #111111;
+  background: #ffffff;
+  box-shadow: 2px 2px 0px #111111;
+  transition: all var(--duration-fast);
+}
+
+.case-study-modal__close:hover {
+  background: #111111;
+  color: #ffffff;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px #111111;
+}
+
+.case-study-modal__close-icon {
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* ── Sub-Tabs Navigation (Pages within pages) ── */
+.case-study-modal__subtabs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  background: #ffffff;
+  border-bottom: 2px solid #111111;
+  overflow-x: auto;
+}
+
+.case-study-tab {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  border: 1.5px solid #111111;
+  background: #ffffff;
+  color: #111111;
+  box-shadow: 2px 2px 0px #111111;
+  transition: all var(--duration-fast);
+  white-space: nowrap;
+}
+
+.case-study-tab:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px #111111;
+}
+
+.case-study-tab--active {
+  background: #111111;
+  color: #ffffff;
+}
+
+/* ── Modal Body ── */
+.case-study-modal__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 0 2.5rem 0;
+  background: #ffffff;
+}
+
+.case-study-modal__subview {
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── Hero Viewport ── */
+.case-study-modal__hero-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  max-height: 520px;
+  overflow: hidden;
+  background: #111111;
+  border-bottom: 2px solid #111111;
+}
+
+.case-study-modal__hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.case-study-modal__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    transparent 40%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 2.5rem;
+}
+
+.case-study-modal__hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+  padding: 0.35rem 0.85rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid #111111;
+  box-shadow: 2px 2px 0px #111111;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: #111111;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.case-study-modal__pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ff2a5f;
+  box-shadow: 0 0 8px #ff2a5f;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+.case-study-modal__hero-title-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.case-study-modal__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: #ffffff;
+}
+
+.case-study-modal__subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(0.9rem, 1.5vw, 1.15rem);
+  font-weight: 400;
+  color: #e5e5e5;
+  max-width: 720px;
+}
+
+/* ── Quote Block ── */
+.case-study-modal__quote-block {
+  padding: 2rem 2.5rem 1.75rem;
+  border-bottom: 1px solid var(--color-border);
+  background: #fbfbfa;
+}
+
+.case-study-modal__quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #111111;
+  border-left: 3px solid #111111;
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+/* ── Content Grid ── */
+.case-study-modal__grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 3rem;
+  padding: 2.5rem 2.5rem 1rem;
+}
+
+.case-study-modal__narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.case-study-modal__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.case-study-modal__section-heading {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #111111;
+}
+
+.case-study-modal__text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+}
+
+/* ── Styleframes Gallery ── */
+.case-study-modal__styleframes-expanded {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+.case-study-modal__frame-card-lg {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #111111;
+  border: 2px solid #111111;
+  box-shadow: 6px 6px 0px #111111;
+}
+
+.case-study-modal__frame-card-lg img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform var(--duration-normal) var(--ease-out-expo);
+}
+
+.case-study-modal__frame-card-lg:hover img {
+  transform: scale(1.05);
+}
+
+.case-study-modal__frame-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem 0.85rem;
+  background: rgba(255, 255, 255, 0.95);
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #111111;
+  border-top: 1.5px solid #111111;
+}
+
+/* ── Sidebar Meta Card ── */
+.case-study-modal__sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.case-study-modal__meta-card {
+  background: #fbfbfa;
+  border: 2px solid #111111;
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  box-shadow: 4px 4px 0px #111111;
+}
+
+.case-study-modal__meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.case-study-modal__meta-label {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.case-study-modal__meta-value {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111111;
+}
+
+.case-study-modal__meta-divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 0.25rem 0;
+}
+
+.case-study-modal__tool-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.2rem;
+}
+
+.case-study-modal__tool-pill {
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  background: #ffffff;
+  border: 1px solid #111111;
+  border-radius: var(--radius-full);
+  color: #111111;
+  font-weight: 600;
+}
+
+.case-study-modal__deliverables-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-top: 0.25rem;
+}
+
+.case-study-modal__deliverables-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.case-study-modal__bullet {
+  color: #111111;
+  font-size: 0.55rem;
+}
+
+/* ── Modal Footer ── */
+.case-study-modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2rem;
+  border-top: 2px solid #111111;
+  background: #fbfbfa;
+}
+
+.case-study-modal__footer-note {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+}
+
+.case-study-modal__inquire-btn {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: var(--color-onyx);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  border: 1.5px solid var(--color-onyx);
+  transition: all 0.22s var(--ease-spring);
+}
+
+.case-study-modal__inquire-btn:hover {
+  background: var(--color-blue-bell);
+  border-color: var(--color-blue-bell);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 141, 213, 0.25);
+}
+
+@media (max-width: 900px) {
+  .case-study-modal__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem 1.5rem 1rem;
+  }
+
+  .case-study-modal__hero-overlay {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .case-study-modal__quote-block {
+    padding: 1.5rem;
+  }
+
+  .case-study-modal__footer {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+    text-align: center;
+  }
+}

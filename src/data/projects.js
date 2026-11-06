@@ -1,0 +1,411 @@
+// Reliable high-contrast placeholders with distinct visual identities
+export const portfolioProjects = [
+  {
+    id: 1,
+    title: 'Synapse Zero',
+    subtitle: 'Real-Time Hypercar Reveal & Virtual Production',
+    category: 'Virtual Production',
+    client: 'Apex Formula Labs',
+    year: '2026',
+    role: 'Director & 3D Lead',
+    duration: '01:45 Commercial',
+    image: 'https://picsum.photos/seed/hypercar/1200/800',
+    description: 'Real-time launch campaign engineered entirely in Unreal Engine 5.4. High-gloss carbon reflections, volumetric atmospheric lighting, and sound-reactive kinetic typography.',
+    tags: ['Unreal Engine 5.4', 'Blender', 'DaVinci Resolve', 'After Effects'],
+    type: 'portfolio',
+    featured: true,
+    color: '#008dd5',
+    colorBg: '#f8f8f6',
+    overview: 'An editorial commercial unveiling the Synapse Zero concept hypercar. The brief called for a fusion of raw aerodynamic aggression with high-fashion luxury minimalism.',
+    challenge: 'Achieving photorealistic real-time carbon fiber reflections and dynamic lighting across curved bodywork without resorting to pre-rendered offline pipelines.',
+    solution: 'Designed custom Lumen ray-tracing light rigs, scripted virtual camera tracking with subtle camera shake, and executed final grading in DaVinci Resolve using an organic 35mm film emulation transform.',
+    deliverables: ['4K DCI Cinemascope Master', '10x Social Cutdowns (9:16)', 'Print Quality Key Visuals'],
+    toolchain: ['Unreal Engine 5.4 (Lumen/Sequencer)', 'Blender 4.2', 'DaVinci Resolve Studio', 'After Effects'],
+    // Multi-Pass 3D breakdown
+    hasMultiPass: true,
+    passes: {
+      wireframe: 'https://picsum.photos/seed/wireframe1/1200/800',
+      clay: 'https://picsum.photos/seed/clay1/1200/800',
+      composite: 'https://picsum.photos/seed/hypercar/1200/800',
+    },
+    // Color Grading Wipe Comparison
+    hasColorGrade: true,
+    grading: {
+      log: 'https://picsum.photos/seed/logcar/1200/800',
+      grade: 'https://picsum.photos/seed/hypercar/1200/800',
+    },
+    styleframes: [
+      'https://picsum.photos/seed/frame1/800/500',
+      'https://picsum.photos/seed/frame2/800/500',
+      'https://picsum.photos/seed/frame3/800/500'
+    ],
+    highlightQuote: '“A masterclass in real-time cinematic pacing and photoreal light design.”'
+  },
+  {
+    id: 2,
+    title: 'Liquid Chrome & Monolith',
+    subtitle: 'Procedural Metal Typography & Title Sequence',
+    category: 'Motion Design',
+    client: 'XL Recordings // Tour Visuals',
+    year: '2024',
+    role: 'Motion Designer & 3D Artist',
+    duration: 'Multi-Screen Arena Visuals',
+    image: 'https://picsum.photos/seed/liquidchrome/1200/800',
+    description: 'Molten chrome typography morphing across deep atmospheric voids. Synchronized to live MIDI stems with procedural Octane and Cycles shader networks.',
+    tags: ['Blender Cycles', 'After Effects', 'Photoshop'],
+    type: 'portfolio',
+    featured: true,
+    color: '#e94f37',
+    colorBg: '#f8f8f6',
+    overview: 'Full visual identity and live concert backdrop package for an international electronic music tour, displayed across panoramic LED walls.',
+    challenge: 'Creating fluid, non-repetitive organic fluid simulations that reacted dynamically to tempo shifts and heavy bass transients.',
+    solution: 'Built custom Blender geometry nodes for procedural typography disintegration and layered dual-pass chromatic dispersion in After Effects.',
+    deliverables: ['8K Arena LED Canvas Masters', 'Motion Title Ident', 'Album Artwork Suite'],
+    toolchain: ['Blender 4.2', 'After Effects 2024', 'Illustrator', 'Topaz Video AI'],
+    hasMultiPass: true,
+    passes: {
+      wireframe: 'https://picsum.photos/seed/wireframe2/1200/800',
+      clay: 'https://picsum.photos/seed/clay2/1200/800',
+      composite: 'https://picsum.photos/seed/liquidchrome/1200/800',
+    },
+    hasColorGrade: true,
+    grading: {
+      log: 'https://picsum.photos/seed/logliquid/1200/800',
+      grade: 'https://picsum.photos/seed/liquidchrome/1200/800',
+    },
+    styleframes: [
+      'https://picsum.photos/seed/frame4/800/500',
+      'https://picsum.photos/seed/frame5/800/500'
+    ],
+    highlightQuote: '“Hypnotic visual velocity that elevates the physical concert space.”'
+  },
+  {
+    id: 3,
+    title: 'Brutalist Monolith',
+    subtitle: 'Spatial Architectural Study in Deep Void',
+    category: '3D Art',
+    client: 'R&D / Independent Study',
+    year: '2024',
+    role: 'Art Director',
+    duration: 'Cinematic Loop',
+    image: 'https://picsum.photos/seed/brutalist/1200/800',
+    description: 'Monolithic concrete brutalist architecture suspended in infinite space. Explores the dialogue between light, scale, and meditative isolation.',
+    tags: ['Unreal Engine 5', 'Blender', 'Photoshop'],
+    type: 'playground',
+    featured: true,
+    color: '#008dd5',
+    colorBg: '#f8f8f6',
+    overview: 'Personal visual exploration studying the weight of concrete forms under harsh directional sunlight, inspired by Tadao Ando and sci-fi cinema.',
+    challenge: 'Balancing extreme geometric simplicity with micro-surface tactile realism such as weathering, gravel aggregate, and dust motes.',
+    solution: 'Hand-sculpted displacement maps blended with procedural Nanite meshes and custom volumetric fog density volumes.',
+    deliverables: ['4K Framed Art Prints', 'Interactive Realtime Walkthrough', 'Shader Presets'],
+    toolchain: ['Unreal Engine 5.4', 'Substance Painter', 'Blender'],
+    hasMultiPass: true,
+    passes: {
+      wireframe: 'https://picsum.photos/seed/wireframe3/1200/800',
+      clay: 'https://picsum.photos/seed/clay3/1200/800',
+      composite: 'https://picsum.photos/seed/brutalist/1200/800',
+    },
+    hasColorGrade: false,
+    styleframes: [
+      'https://picsum.photos/seed/frame6/800/500',
+      'https://picsum.photos/seed/frame7/800/500'
+    ],
+    highlightQuote: '“Heavy, tactile, and hauntingly quiet architectural cinema.”'
+  },
+  {
+    id: 4,
+    title: 'Chromatic Deconstruction',
+    subtitle: 'High-Impact Brand Identity & Editorial Titles',
+    category: 'Motion Design',
+    client: 'Vanguard Contemporary Fashion',
+    year: '2024',
+    role: 'Lead Motion Designer',
+    duration: '00:30 Brand Film',
+    image: 'https://picsum.photos/seed/chromatic/1200/800',
+    description: 'Deconstructed serif letterforms colliding with editorial fashion photography. Subtle glitch transitions and tactile print-making halftone textures.',
+    tags: ['After Effects', 'Photoshop', 'Premiere Pro'],
+    type: 'portfolio',
+    featured: true,
+    color: '#ff6978',
+    colorBg: '#f8f8f6',
+    overview: 'Campaign opener for an avant-garde fashion week showcase in Paris. Needed to bridge classical Swiss typographic heritage with kinetic street culture.',
+    challenge: 'Harmonizing high-speed kinetic cuts with delicate luxury editorial typography without feeling chaotic or frantic.',
+    solution: 'Hand-animated bezier easing curves, custom optical gate weave emulation, and frame-by-frame halftone ink bleed overlays.',
+    deliverables: ['Main Title Package', 'Social Teasers', 'Broadcast Commercial'],
+    toolchain: ['After Effects', 'Photoshop', 'Premiere Pro'],
+    hasMultiPass: false,
+    hasColorGrade: true,
+    grading: {
+      log: 'https://picsum.photos/seed/logfashion/1200/800',
+      grade: 'https://picsum.photos/seed/chromatic/1200/800',
+    },
+    styleframes: [
+      'https://picsum.photos/seed/frame8/800/500',
+      'https://picsum.photos/seed/frame9/800/500'
+    ],
+    highlightQuote: '“Where haute couture editorial layout meets explosive kinetic rhythm.”'
+  },
+  {
+    id: 5,
+    title: 'Iridescent Biome',
+    subtitle: 'Generative Biological Forms & Shader Experiments',
+    category: '3D Art',
+    client: 'Personal Experiment',
+    year: '2024',
+    role: 'Creative Technologist',
+    duration: 'Interactive Shader',
+    image: 'https://picsum.photos/seed/iridescent/1200/800',
+    description: 'Microscopic iridescent organic forms reflecting an ethereal environment. Procedural noise displacing subsurface scattering shaders.',
+    tags: ['Blender', 'Cycles', 'After Effects'],
+    type: 'playground',
+    featured: false,
+    color: '#008dd5',
+    colorBg: '#f8f8f6',
+    overview: 'Exploration into mathematical thin-film interference formulas and simulated micro-organism mechanics.',
+    challenge: 'Achieving physically accurate optical caustics in reasonable render times.',
+    solution: 'Utilized Blender 4.2 ray-portal and spectral rendering nodes to simulate multi-layered pearl refraction.',
+    deliverables: ['Looping Stills & Renders', 'Custom Procedural Shader Pack'],
+    toolchain: ['Blender Cycles', 'After Effects'],
+    styleframes: [
+      'https://picsum.photos/seed/frame10/800/500',
+      'https://picsum.photos/seed/frame11/800/500'
+    ],
+    highlightQuote: '“Pure tactile organic beauty in digital light.”'
+  },
+  {
+    id: 6,
+    title: 'Chronos Series Titles',
+    subtitle: 'Cinematic Noir Title Sequence & Film Grade',
+    category: 'Video Edit',
+    client: 'Nordic Noir Productions',
+    year: '2023',
+    role: 'Editor & Colorist',
+    duration: '02:15 Opening Titles',
+    image: 'https://picsum.photos/seed/noir/1200/800',
+    description: 'Opening titles for an 8-part psychological mystery. Macro photography layered with tactile typography and authentic 16mm grain.',
+    tags: ['Premiere Pro', 'DaVinci Resolve', 'After Effects'],
+    type: 'commissioned',
+    featured: false,
+    color: '#e94f37',
+    colorBg: '#f8f8f6',
+    overview: 'Full title sequence direction and color grading for a critically acclaimed Scandinavian television drama.',
+    challenge: 'Establishing an eerie, lingering atmosphere that foreshadows the narrative tension while preserving actor billing readability.',
+    solution: 'Shot custom practical ink-in-water elements, composited with 32-bit linear floating point depth, and finished with Kodak 2383 print stock emulation.',
+    deliverables: ['4K Dolby Vision Master', 'Title Card Graphics Package'],
+    toolchain: ['DaVinci Resolve Studio', 'Premiere Pro', 'After Effects'],
+    hasMultiPass: false,
+    hasColorGrade: true,
+    grading: {
+      log: 'https://picsum.photos/seed/logfilm/1200/800',
+      grade: 'https://picsum.photos/seed/noir/1200/800',
+    },
+    styleframes: [
+      'https://picsum.photos/seed/frame12/800/500',
+      'https://picsum.photos/seed/frame13/800/500'
+    ],
+    highlightQuote: '“Atmospheric storytelling that sets the tone before the first dialogue line.”'
+  },
+  {
+    id: 7,
+    title: 'Neon Odyssey',
+    subtitle: 'Cybernetic Automotive Nocturne',
+    category: 'Virtual Production',
+    client: 'Apex Automotive',
+    year: '2024',
+    role: '3D Generalist',
+    duration: '00:45 Commercial',
+    image: 'https://picsum.photos/seed/neoncity/1200/800',
+    description: 'High-speed camera tracking through an obsidian wet city street. Volumetric neon reflections and anamorphic lens flares.',
+    tags: ['Unreal Engine', 'Blender', 'DaVinci Resolve'],
+    type: 'commissioned',
+    featured: false,
+    color: '#008dd5',
+    colorBg: '#f8f8f6',
+    overview: 'Commercial teaser targeting luxury electric vehicle performance.',
+    challenge: 'Simulating complex road spray particles in real-time camera tracking.',
+    solution: 'Custom Niagara particle emitter paired with Unreal 5 sequencer camera paths.',
+    deliverables: ['Broadcast Master', 'Online Campaign'],
+    toolchain: ['Unreal Engine 5.4', 'DaVinci Resolve'],
+    styleframes: ['https://picsum.photos/seed/frame14/800/500'],
+    highlightQuote: '“Pure velocity and nocturnal atmosphere.”'
+  },
+  {
+    id: 8,
+    title: 'Kinetic Resonator',
+    subtitle: 'Audio-Reactive Geometry & Kinetic Typography',
+    category: 'Motion Design',
+    client: 'SoundLab Collective',
+    year: '2024',
+    role: 'Motion Designer',
+    duration: 'Music Video Visuals',
+    image: 'https://picsum.photos/seed/resonator/1200/800',
+    description: 'Reactive typographic expressions pulsating with sub-bass frequency spectrums. Modern editorial sans layout.',
+    tags: ['After Effects', 'Premiere Pro', 'Illustrator'],
+    type: 'playground',
+    featured: false,
+    color: '#ff6978',
+    colorBg: '#f8f8f6',
+    overview: 'Experimental kinetic typography test driven by stem frequency extraction in After Effects.',
+    challenge: 'Connecting complex multi-band audio keyframes to typographic weight variables smoothly.',
+    solution: 'Wrote dynamic After Effects JavaScript expressions to control variable font weight and letter spacing per frequency band.',
+    deliverables: ['Visualizer Loop', 'Motion Graphic Rig Template'],
+    toolchain: ['After Effects', 'Premiere Pro'],
+    styleframes: ['https://picsum.photos/seed/frame15/800/500'],
+    highlightQuote: '“Sound given kinetic typography weight.”'
+  }
+];
+
+export const disciplines = [
+  {
+    id: '01',
+    title: 'Virtual Production & 3D',
+    category: 'Real-Time Environments',
+    description: 'Photoreal worldbuilding in Unreal Engine 5 & Blender. Procedural lighting, Lumen illumination, high-gloss materials, and virtual camera cinematography.',
+    tools: ['Unreal Engine 5.4', 'Blender', 'Substance Painter'],
+    image: 'https://picsum.photos/seed/unrealworld/800/500',
+    color: '#0066ff',
+    colorBg: '#eff6ff'
+  },
+  {
+    id: '02',
+    title: 'Kinetic Typography & Motion',
+    category: 'Graphic Systems',
+    description: 'Expressive title sequences, dynamic typographic design systems, audio-synchronized motion graphics, and luxury commercial openers.',
+    tools: ['After Effects', 'Photoshop', 'Illustrator'],
+    image: 'https://picsum.photos/seed/kinetictype/800/500',
+    color: '#ff2a5f',
+    colorBg: '#fff1f2'
+  },
+  {
+    id: '03',
+    title: 'Narrative Edit & Color Science',
+    category: 'Cinematic Finish',
+    description: 'Rhythmic commercial pacing, sound-driven editing in Premiere, and bespoke film stock emulation in DaVinci Resolve with ACES color pipelines.',
+    tools: ['DaVinci Resolve Studio', 'Premiere Pro', 'Film Emulation'],
+    image: 'https://picsum.photos/seed/editorialcolor/800/500',
+    color: '#ff8c00',
+    colorBg: '#fffbeb'
+  },
+  {
+    id: '04',
+    title: 'Creative Tech & Shaders',
+    category: 'R&D Experiments',
+    description: 'Procedural material graphs, liquid metal dynamics, generative particle systems, and modular rigging for interactive and broadcast installations.',
+    tools: ['Blender Geometry Nodes', 'Cycles', 'After Effects Expressions'],
+    image: 'https://picsum.photos/seed/creativetech/800/500',
+    color: '#76d600',
+    colorBg: '#f2fce2'
+  }
+];
+
+export const shopItems = [
+  {
+    id: 101,
+    title: 'Kinetic Type System: 40+ Modular AE Presets',
+    price: 39,
+    category: 'Motion Presets',
+    format: '.AEP • .MOGRT',
+    rating: '5.0 (148 reviews)',
+    image: 'https://picsum.photos/seed/aepresets/800/550',
+    color: '#008dd5',
+    colorBg: '#f8f8f6',
+    description: 'Production-ready typographic animation rigs for After Effects with dynamic auto-resizing canvas containers and audio-sync markers.',
+    features: [
+      '40+ Modular title sequence presets',
+      'Full expression-rigged auto-responsive boxes',
+      'Compatible with AE 2023-2026',
+      '4K 60FPS raw source project files'
+    ]
+  },
+  {
+    id: 102,
+    title: 'Analog Film Emulation: 12 DaVinci PowerGrades',
+    price: 34,
+    category: 'Color & LUTs',
+    format: '.DRP • .DPX • 3D LUT',
+    rating: '5.0 (210 reviews)',
+    image: 'https://picsum.photos/seed/powergrades/800/550',
+    color: '#e94f37',
+    colorBg: '#f8f8f6',
+    description: 'Authentic 35mm & 16mm halation algorithms, custom optical gate weave, and organic Kodak print grain curves built in DaVinci Resolve node trees.',
+    features: [
+      '12 Master node graph PowerGrades',
+      'Accurate halation, bloom & gate weave nodes',
+      'Rec.709, ARRI LogC3/4 & RED IPP2 CST transforms',
+      'Non-destructive modular grading'
+    ]
+  },
+  {
+    id: 103,
+    title: 'Liquid Chrome & Iridescent Procedural Shaders',
+    price: 45,
+    category: '3D Materials',
+    format: '.BLEND • OCTANE • CYCLES',
+    rating: '5.0 (92 reviews)',
+    image: 'https://picsum.photos/seed/chromeshader/800/550',
+    color: '#008dd5',
+    colorBg: '#f8f8f6',
+    description: '18 vector-based procedural materials for Blender Cycles and Octane. Infinite resolution, zero texture memory overhead, and fluid morphing parameters.',
+    features: [
+      '18 Fully procedural material nodes',
+      'Molten chrome, pearl iridescent & brushed titanium',
+      'Real-time viewport preview friendly',
+      'Includes sample lighting studio scene'
+    ]
+  },
+  {
+    id: 104,
+    title: 'Brutalist Monolith 3D Kitbash Pack',
+    price: 59,
+    category: '3D Environments',
+    format: '.FBX • .BLEND • UE 5.4',
+    rating: '5.0 (64 reviews)',
+    image: 'https://picsum.photos/seed/kitbash3d/800/550',
+    color: '#121313',
+    colorBg: '#f8f8f6',
+    description: '45 modular concrete architectural meshes pre-configured with Nanite geometry and 4K PBR concrete surface textures for Unreal Engine and Blender.',
+    features: [
+      '45 Modular structural architectural pieces',
+      'Unreal Engine 5.4 Nanite & Lumen ready',
+      'Blender Asset Browser catalogue included',
+      'Commercial royalty-free extended license'
+    ]
+  },
+  {
+    id: 105,
+    title: 'Complete Showreel 2026 Master Project Deconstruction',
+    price: 79,
+    category: 'Project Files',
+    format: '.PRPROJ • .AEP • .BLEND',
+    rating: '5.0 (88 reviews)',
+    image: 'https://picsum.photos/seed/showreeldecon/800/550',
+    color: '#008dd5',
+    colorBg: '#f8f8f6',
+    description: 'Every keyframe, audio transient, and 3D render pass from the 2026 Studio Showreel. Full timeline breakdowns across Premiere, After Effects, and Blender.',
+    features: [
+      'Full Premiere Pro editing timeline with stems',
+      'AE master composition with 32-bit linear comping',
+      'Blender lighting & animation scene files',
+      'Educational breakdown PDF notes'
+    ]
+  },
+  {
+    id: 106,
+    title: 'Organic Metal & Molten Textures: 100+ 8K Maps',
+    price: 29,
+    category: 'Texture Assets',
+    format: '8K TIFF • EXR',
+    rating: '5.0 (176 reviews)',
+    image: 'https://picsum.photos/seed/metaltextures/800/550',
+    color: '#ff6978',
+    colorBg: '#f8f8f6',
+    description: '100+ ultra-high-resolution 16-bit displacement and roughness maps for molten metal typography, alien fluid flows, and tactile graphic design.',
+    features: [
+      '100+ 8K 16-bit uncompressed TIFF/EXR files',
+      'Height, normal, roughness & curvature maps',
+      'Compatible with Cinema 4D, Blender, Houdini',
+      'Seamless tiling on all procedural surfaces'
+    ]
+  }
+];

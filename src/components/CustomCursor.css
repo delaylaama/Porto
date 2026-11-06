@@ -1,0 +1,74 @@
+.custom-cursor-active,
+.custom-cursor-active * {
+  cursor: none !important;
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform;
+}
+
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  margin-top: -3px;
+  background: var(--color-blue-bell, #008dd5);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 141, 213, 0.8);
+  transition: opacity 0.15s ease;
+}
+
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  margin-left: -17px;
+  margin-top: -17px;
+  border: 1.5px solid rgba(18, 19, 19, 0.45);
+  border-radius: 50%;
+  transition: border-color 0.15s ease, background-color 0.15s ease, width 0.2s cubic-bezier(0.16, 1, 0.3, 1), height 0.2s cubic-bezier(0.16, 1, 0.3, 1), margin 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contextual State: Expanded Editorial Pill with Action Label */
+.cursor-ring--text {
+  width: 74px !important;
+  height: 30px !important;
+  margin-left: -37px !important;
+  margin-top: -15px !important;
+  border-radius: 9999px !important;
+  background: var(--color-onyx, #121313) !important;
+  border: 1.5px solid var(--color-blue-bell, #008dd5) !important;
+  box-shadow: 0 6px 20px rgba(0, 141, 213, 0.35) !important;
+}
+
+.cursor-ring__label {
+  display: none;
+  font-family: var(--font-heading, 'Space Grotesk', sans-serif);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #ffffff;
+  text-transform: uppercase;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+
+.cursor-ring--text .cursor-ring__label {
+  display: block;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}

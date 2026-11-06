@@ -1,0 +1,349 @@
+/* ══════════════════════════════════════════════════════════════
+   TRI-FUSION TILT CARD — Light Theme + Halftone Comic Shadow
+   ══════════════════════════════════════════════════════════════ */
+
+.tilt-card-wrapper {
+  position: relative;
+  border-radius: var(--radius-lg);
+  perspective: 1200px;
+  animation: cardWrapperReveal 0.65s var(--ease-out-expo) both;
+  animation-delay: var(--delay, 0ms);
+}
+
+@keyframes cardWrapperReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── 1. COMIC HALFTONE DROP SHADOW (ONLY VISIBLE ON HOVER) ── */
+.tilt-card__halftone-shadow {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid #121313;
+  background-color: var(--card-color-bg, #f8f8f6);
+  background-image: 
+    radial-gradient(circle, #121313 24%, transparent 25%),
+    radial-gradient(circle, #008dd5 24%, transparent 25%);
+  background-size: 8px 8px, 16px 16px;
+  background-position: 0 0, 4px 4px;
+  transform: translate(0, 0);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.28s ease, 
+              transform 0.32s var(--ease-spring),
+              visibility 0.28s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.tilt-card-wrapper:hover .tilt-card__halftone-shadow,
+.tilt-card-wrapper--hovered .tilt-card__halftone-shadow {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(10px, 10px);
+  box-shadow: 2px 2px 0px #121313;
+}
+
+/* ── 2. FOREGROUND 3D TILTING CARD ── */
+.tilt-card {
+  position: relative;
+  z-index: 2;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #ffffff;
+  border: 1.5px solid #121313;
+  box-shadow: 0 4px 16px rgba(18, 19, 19, 0.04);
+  transform-style: preserve-3d;
+  perspective: 1200px;
+  transform: perspective(1200px)
+             rotateX(var(--rotateX, 0deg))
+             rotateY(var(--rotateY, 0deg))
+             translateY(0);
+  transition: transform var(--duration-normal) var(--ease-out-expo),
+              border-color var(--duration-fast),
+              box-shadow var(--duration-fast);
+  will-change: transform;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.tilt-card-wrapper:hover .tilt-card,
+.tilt-card--hovered {
+  border-color: #008dd5;
+  box-shadow: 0 12px 32px rgba(0, 141, 213, 0.12);
+  transform: perspective(1200px)
+             rotateX(var(--rotateX, 0deg))
+             rotateY(var(--rotateY, 0deg))
+             translateY(-6px);
+}
+
+/* Futuristic Blue Bell / Accent Rim */
+.tilt-card__color-rim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--card-color, #111111);
+  z-index: 10;
+}
+
+/* ── Media Frame ── */
+.tilt-card__image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background: #111111;
+  border-bottom: 2px solid #111111;
+}
+
+.tilt-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.05) brightness(0.95);
+  transition: transform 0.6s var(--ease-out-expo), filter 0.4s;
+}
+
+.tilt-card--hovered .tilt-card__image,
+.tilt-card-wrapper:hover .tilt-card__image {
+  transform: scale(1.06);
+  filter: contrast(1.1) brightness(1);
+}
+
+.tilt-card__image-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    transparent 45%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  pointer-events: none;
+}
+
+/* Specular Glare */
+.tilt-card__glare {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--glare-x, 50%) var(--glare-y, 50%),
+    rgba(255, 255, 255, 0.28) 0%,
+    transparent 65%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-fast);
+  z-index: 5;
+}
+
+.tilt-card--hovered .tilt-card__glare,
+.tilt-card-wrapper:hover .tilt-card__glare {
+  opacity: 1;
+}
+
+/* Top Badges */
+.tilt-card__top-bar {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 6;
+  transform: translateZ(25px);
+}
+
+.tilt-card__category-badge {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-onyx);
+  background: #ffffff;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-onyx);
+}
+
+.tilt-card__year-badge {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-onyx);
+  background: #ffffff;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-onyx);
+}
+
+/* Hover Inspect Action Pill */
+.tilt-card__inspect-pill {
+  position: absolute;
+  bottom: 0.85rem;
+  right: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.85rem;
+  background: var(--color-onyx);
+  color: #ffffff;
+  border: 1.5px solid var(--color-onyx);
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  z-index: 6;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: all var(--duration-fast) var(--ease-out-expo);
+}
+
+.tilt-card-wrapper:hover .tilt-card__inspect-pill,
+.tilt-card--hovered .tilt-card__inspect-pill {
+  opacity: 1;
+  transform: translateY(0);
+  background: var(--color-blue-bell);
+  border-color: var(--color-blue-bell);
+}
+
+.tilt-card__inspect-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--card-color, #ff2a5f);
+}
+
+/* ── Content Block (Light Theme) ── */
+.tilt-card__content {
+  padding: 1.35rem 1.6rem 1.6rem;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  transform: translateZ(28px);
+}
+
+.tilt-card__meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tilt-card__client {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--card-color, #111111);
+  font-weight: 700;
+}
+
+.tilt-card__accent-bar {
+  width: 24px;
+  height: 3px;
+  background: var(--card-color, #111111);
+  border-radius: var(--radius-full);
+}
+
+.tilt-card__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 500;
+  line-height: 1.16;
+  letter-spacing: -0.01em;
+  color: #111111;
+  margin: 0.15rem 0;
+}
+
+.tilt-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+}
+
+.tilt-card__tag {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: #111111;
+  background: var(--card-color-bg, #f5f5f0);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  transition: all var(--duration-fast);
+}
+
+.tilt-card-wrapper:hover .tilt-card__tag {
+  border-color: #111111;
+}
+
+/* ── Spider-Verse Ink Corner Marks ── */
+.tilt-card__corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out-expo),
+              transform var(--duration-normal) var(--ease-out-expo);
+  pointer-events: none;
+}
+
+.tilt-card-wrapper:hover .tilt-card__corner,
+.tilt-card--hovered .tilt-card__corner {
+  opacity: 1;
+}
+
+.tilt-card__corner--tl {
+  top: 8px;
+  left: 8px;
+  border-top: 2.5px solid #111111;
+  border-left: 2.5px solid #111111;
+  transform: translate(-3px, -3px);
+}
+.tilt-card-wrapper:hover .tilt-card__corner--tl { transform: translate(0, 0); }
+
+.tilt-card__corner--tr {
+  top: 8px;
+  right: 8px;
+  border-top: 2.5px solid #111111;
+  border-right: 2.5px solid #111111;
+  transform: translate(3px, -3px);
+}
+.tilt-card-wrapper:hover .tilt-card__corner--tr { transform: translate(0, 0); }
+
+.tilt-card__corner--bl {
+  bottom: 8px;
+  left: 8px;
+  border-bottom: 2.5px solid #111111;
+  border-left: 2.5px solid #111111;
+  transform: translate(-3px, 3px);
+}
+.tilt-card-wrapper:hover .tilt-card__corner--bl { transform: translate(0, 0); }
+
+.tilt-card__corner--br {
+  bottom: 8px;
+  right: 8px;
+  border-bottom: 2.5px solid #111111;
+  border-right: 2.5px solid #111111;
+  transform: translate(3px, 3px);
+}
+.tilt-card-wrapper:hover .tilt-card__corner--br { transform: translate(0, 0); }
